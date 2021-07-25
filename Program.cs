@@ -6,46 +6,17 @@ namespace AvaliacaoDiagnostica
     {
         static void Main(string[] args)
         {
+            Conta_Poupanca c1 = new Conta_Poupanca("Vinicius",2539,3,10,0.5) ;
 
-            int tamanho = 10;
-            int[] numeros = new int[tamanho];
-            int restoDivisao = 0;
-
-            bool encontrado = false;
-
-            Console.WriteLine("Digite 10 Valores Inteiros :");
-            for (int i = 0; i < tamanho; i++)
-            {
-                numeros[i] = int.Parse(Console.ReadLine());
-            }
-
-            Console.WriteLine("Digite um Valor Inteiro para Procurar :");
-            int numeroProcurado = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < tamanho; i++)
-            {
-                if (numeros[i] == numeroProcurado)
-                {
-                    encontrado = true;
-                    restoDivisao = numeroProcurado % 2;
-                    if (restoDivisao == 0)
-                    {
-                        Console.WriteLine("O número PAR {0} foi encontrado com sucesso!", numeros[i]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("O número IMPAR {0} foi encontrado com sucesso!", numeros[i]);
-                    }
-
-                }
-
-            }
-            if (encontrado == false)
-            {
-                Console.WriteLine("O número {0} não foi encontrado!", numeroProcurado);
-            }
-
-
+            Console.WriteLine("Nome:{0}", c1.nome);
+            Console.WriteLine("Salario:{0}", c1.salario);
+            Console.WriteLine("Duração:{0}", c1.duracao);
+            Console.WriteLine("Desconto:{0}", c1.desconto);
+            Console.WriteLine("Taxa:{0}", c1.taxa);
+            Console.WriteLine("Rendimento CC Mensal:{0}", c1.rendimento_cc_mensal());
+            Console.WriteLine("Rendimento CC Duracao:{0}", c1.rendimento_cc_duracao());
+            Console.WriteLine("Rendimento CP Mensal:{0}", c1.rendimento_cp_mensal());
+            Console.WriteLine("Rendimento CP Duracao:{0}", c1.rendimento_cp_duracao());
         }
     }
 }
