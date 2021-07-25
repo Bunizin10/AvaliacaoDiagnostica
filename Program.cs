@@ -1,22 +1,41 @@
 ﻿using System;
 
-namespace AvaliacaoDiagnostica
+namespace AvaliacaoFinal
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Conta_Poupanca c1 = new Conta_Poupanca("Vinicius",2539,3,10,0.5) ;
+            
+            Console.WriteLine("Digite o nome do funcionario:");
+            string nome1= Console.ReadLine();
+            Console.WriteLine("Digite 1 caso seja funcionario da empresa ou digite 2 caso seja funcionario terceirizado:");
+            int tipo1 = int.Parse(Console.ReadLine());
+ 
+       
+            Console.WriteLine("Digite o nome do funcionario:");
+            string nome2= Console.ReadLine();
+            Console.WriteLine("Digite 1 caso seja funcionario da empresa ou digite 2 caso seja funcionario terceirizado:");
+            int tipo2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Nome:{0}", c1.nome);
-            Console.WriteLine("Salario:{0}", c1.salario);
-            Console.WriteLine("Duração:{0}", c1.duracao);
-            Console.WriteLine("Desconto:{0}", c1.desconto);
-            Console.WriteLine("Taxa:{0}", c1.taxa);
-            Console.WriteLine("Rendimento CC Mensal:{0}", c1.rendimento_cc_mensal());
-            Console.WriteLine("Rendimento CC Duracao:{0}", c1.rendimento_cc_duracao());
-            Console.WriteLine("Rendimento CP Mensal:{0}", c1.rendimento_cp_mensal());
-            Console.WriteLine("Rendimento CP Duracao:{0}", c1.rendimento_cp_duracao());
+            if (tipo1 == 1)
+            {
+                Funcionario funcionario1 = new Funcionario(nome1, 8, 32.50);
+            }else if (tipo1 == 2)
+            {
+                Funcionario funcionario2 = new FuncionarioTerceirizado(nome1, 8, 32.50, "ITAÚ", 0.07);
+            }
+
+            if (tipo2 == 1)
+            {
+                Funcionario funcionario1 = new Funcionario(nome2, 8, 32.50);
+            }
+            else if (tipo2 == 2)
+            {
+                Funcionario funcionario2 = new FuncionarioTerceirizado(nome2, 8, 32.50, "ITAÚ", 0.07);
+            }
+
+
         }
     }
 }
